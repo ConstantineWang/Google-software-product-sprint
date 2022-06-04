@@ -1,9 +1,246 @@
-#content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 650px;
+*{
+    border: 0;
+    margin: 0;
+    border-bottom: 0;
+    color:white;
+   
 }
 
-#greeting-container {
-  margin-top: 20px;
+body{
+    position:relative;
+}
+  
+p{
+   margin-bottom: 0 !important;
+}
+
+#wrapper{
+    background:linear-gradient(#6495ED, purple);
+    bottom:0;
+}
+
+nav{
+  justify-content:center !important;
+  box-shadow: 10px 5px 5px cyan;
+}
+
+.nav-pills{
+  width:auto;
+}
+
+.navbar-nav p{
+    color:white;
+    margin:10px 40px 10px 40px;
+}
+
+.nav-link{
+    font-size:20px;
+    color: white !important;;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.nav-link:hover{
+    color:lightskyblue !important;
+}
+
+.nav-item{
+    margin-left:25px;
+    color: white !important;;
+}
+.nav-pills .nav-link.active{
+    background-color: black !important;
+    color:gray;
+}
+
+
+.mycard{
+    position:relative;
+    width:400px;
+    height:400px;
+
+    background:white;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction:row;
+    box-shadow: 0 5px 202px rgba(0,0,0,0.5);
+    transition:0.3s;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+html {
+    scroll-padding-top: 150px;
+  }
+
+.mycard:hover{
+    width:100%;
+}
+
+.mycard .imgbox{
+    position:relative;
+    text-align: center;
+    width:400px;
+    height:400px;
+}
+
+.mycard .imgbox img{
+    width:360px;
+    border-radius: 4px;
+}
+
+.card-title{
+    color: black !important;
+}
+
+.card-text{
+    color: black !important;;
+    margin-top: 30px;
+}
+
+.card-body{
+    overflow: hidden;
+    position:relative;
+    margin-top: 50px;
+    padding: 10px 15px;
+    text-align: center;
+    color:black;
+    visibility: hidden;
+    opacity:0;
+    transition:0.3s ease-in;
+
+    transition:0.1s ease-out;
+
+
+}
+
+.mycard:hover .card-body{
+    visibility: visible;
+    opacity: 1;
+    margin-top: 0px;
+    transform:rotateZ(90);
+    transition-delay: 0.2s;
+}
+
+#bottom{
+    bottom:0;
+
+}
+
+h1{
+    color:black;
+}
+
+.card-body p {
+    color:black;
+    margin-top: 20px; 
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+#main li{
+  font-size:large;
+  color:lightgray;
+  list-style:none;
+    margin-left:20px;
+    margin-right:20px;
+    padding: 10px;
+    display: none;
+
+}
+.row{
+  margin-top: 10px !important;
+  font-size:20px;
+}
+h3{
+  margin-top:30px !important;;
+}
+
+/* bottom*/
+#bottom {
+    position: sticky!important;
+    width: 8%;
+    margin-left: 92%;
+    top:0;
+    height: auto;
+    background-color: white;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 20px;
+    /* create a gradient border with top content */
+    border-top-left-radius: 20px;
+    border-top-right-radius: 1px;
+    display:flex;
+    flex-direction: row;
+    transition:0.3s;
+    box-shadow:  5px 5px 30px 10px rgba(0,0,0,0.5);
+    }
+/*
+#sociallinks{
+  margin-top:10px;
+}
+#sociallinks a{
+  display:inline-block;
+  margin-left:10px;
+}
+#sociallinks a:hover{
+  color:white;
+}*/
+
+ #sociallinks{
+     display:flex;
+     flex-direction: column;
+   
+ }
+
+
+/* when mouse hover the social links, the image will change */
+#sociallinks a img{
+    transition:0.1s
+  }
+
+#sociallinks a:hover img{
+    transform:scale(1.2);
+}
+
+.col-sm-10{
+    width: 100% !important;
+    border-radius: 10px;
+    padding: 10px;
+    cursor:pointer;
+}
+
+*{
+    transition:0.1s;
+}
+
+.rightMost{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-right:0px;
+    display: absolute;
+    left:100px;
+    width: 100%;
+    display:flex;
+    justify-content: flex-end;
+}
+
+.row{
+    cursor:pointer;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 50px!important;
+    border : 1px solid white;
+    border-radius: 10px;
+    padding:20px
+}
+
+.row:hover{
+    box-shadow:  5px 5px 30px 10px rgba(0,0,0,0.5);
+}
+
+
+hr{
+    margin-top: 40px !important;
+    border: 0;
+    border-top: 1px solid #eee;
 }
