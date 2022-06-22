@@ -38,10 +38,10 @@ public class ListTextServlet extends HttpServlet {
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
     Query<Entity> query =
-        Query.newEntityQueryBuilder().setKind("Message").setOrderBy(OrderBy.desc("timestamp")).build();
+        Query.newEntityQueryBuilder().setKind("Message").setOrderBy(OrderBy.desc("timestamp")).setLimit(100).build();
     QueryResults<Entity> results = datastore.run(query);
 
-    List<Message> Messages = new ArrayList<>();
+    List<Message> messages = new ArrayList<>();
     while (results.hasNext()) {
 
       Entity entity = results.next();
@@ -50,13 +50,13 @@ public class ListTextServlet extends HttpServlet {
       String message = entity.getString("message");
       long timestamp = entity.getLong("timestamp");
 
-      Message onemessage = new Message(id, name, message, timestamp);
-      Messages.add(onemessage);
+      Message oneMessage = new Message(id, name, message, timestamp);
+      messages.add(oneMessage);
     }
 
     Gson gson = new Gson();
-    System.out.println(Messages);
+    System.out.println(messages);
     response.setContentType("application/json;");
-    response.getWriter().println(gson.toJson(Messages));
+    response.getWriter().println(gson.toJson(messages));
   }
 }

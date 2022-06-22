@@ -35,30 +35,30 @@ function getMessages(){
     })
     .then(()=>{
         if(document.getElementsByClassName("oneMessage").length==0){
-        for(let i=0; i<messages.length; i++){
-            console.log(messages[i])
-            var root=document.getElementById("listMessagesWrapper")
-            var oneMessage=document.createElement("div")
-            oneMessage.id=messages[i].id
-            oneMessage.className="oneMessage"
-            var name = document.createElement("h3")
-            name.innerHTML=messages[i].name+":"
-            var message=document.createElement("p")
-            message.innerHTML="    "+messages[i].message
-            var deleteBtn=document.createElement("button")
-            deleteBtn.innerHTML="🗑️"
-            deleteBtn.onclick=function(){
-                deleteMessage(messages[i].id)
-            }
-            oneMessage.appendChild(name)
-            oneMessage.appendChild(message)
-            oneMessage.appendChild(deleteBtn)
-            oneMessage.style.display="flex"
-            oneMessage.style.flexDirection="row"
+            for(let i=0; i<messages.length; i++){
+                console.log(messages[i])
+                var root=document.getElementById("listMessagesWrapper")
+                var oneMessageDiv=document.createElement("div")
+                oneMessageDiv.id=messages[i].id
+                oneMessageDiv.className="oneMessage"
+                var nameHeader = document.createElement("h3")
+                nameHeader.innerHTML=messages[i].name+":"
+                var message=document.createElement("p")
+                message.innerHTML="    "+messages[i].message
+                var deleteBtn=document.createElement("button")
+                deleteBtn.innerHTML="🗑️"
+                deleteBtn.onclick=function(){
+                    deleteMessage(messages[i].id)
+                }
+                oneMessageDiv.appendChild(nameHeader)
+                oneMessageDiv.appendChild(message)
+                oneMessageDiv.appendChild(deleteBtn)
+                oneMessageDiv.style.display="flex"
+                oneMessageDiv.style.flexDirection="row"
 
-            root.appendChild(oneMessage)
-            
-         }
+                root.appendChild(oneMessageDiv)
+                
+            }
         }
     })
 
@@ -67,7 +67,6 @@ function getMessages(){
 function deleteMessage(id){
     const params = new URLSearchParams();
     params.append('id', id);
-    fetch('/delete', {method: 'POST', body: params});
-    alert("Message deleted")
-    window.location.reload()
+    fetch('/delete_message', {method: 'POST', body: params})
+    .then(()=>{window.location.href="http://cwang-sps-summer22.wl.r.appspot.com/#scrollspyHeading4";settimeout(()=>{window.location.reload()},0)})
 }
