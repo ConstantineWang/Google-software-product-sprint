@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
   </head>
-<body data-spy="scroll" class="data-target" data-offset="51">
+<body data-spy="scroll" class="data-target" data-offset="51" onload="getMessages()">
     <div id = "wrapper" >
        <!--导航栏-->
           <nav class="navbar sticky-top  navbar-expand-lg  bg-black" >     
@@ -44,7 +44,7 @@
                               <a class="nav-link" href="#scrollspyHeading3">Experience</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="#scrollspyHeading4">Projects</a>
+                              <a class="nav-link" href="#scrollspyHeading4">Leave A Message!</a>
                             </li>
                       </ul>
                     </div>
@@ -159,6 +159,19 @@
             <li> Microsoft Office  </li>
               
           </div>
+
+          <h3 id="scrollspyHeading4"></h3>
+          <div id="sendQuestionWrapper"> 
+              <form action="/contact" method="POST">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea type="text" name="message" placeholder="Message" ></textarea>
+                <button onclick=""></button>           
+              </form>
+              <div id="listMessagesWrapper" onload="getMessages()">
+
+              </div>
+            </div>
       </div>
           
 
